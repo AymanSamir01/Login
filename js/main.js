@@ -47,7 +47,6 @@ function getSignUpValues() {
       notValid.classList.replace("d-none", "d-block");
       notValid.classList.replace("text-danger", "text-success");
       clear();
-      // location.href = "http://127.0.0.1:5500/login.html";
       gotoLogin.href = "login.html";
     }
   }
@@ -57,7 +56,6 @@ function getSignUpValues() {
     notValid.innerHTML = "success";
     notValid.classList.replace("d-none", "d-block");
     notValid.classList.replace("text-danger", "text-success");
-    // location.href = "http://127.0.0.1:5500/login.html";
     gotoLogin.href = "login.html";
   } else if (
     userName.value == "" ||
@@ -121,7 +119,6 @@ function getSignInValues() {
     signInValidation.innerHTML = "All inputs are required";
     signInValidation.classList.replace("d-none", "d-block");
   } else if (checkFound() == true) {
-    // location.href = "http://127.0.0.1:5500/home.html";
     gotoHome.href = "home.html";
     clear();
   } else {
