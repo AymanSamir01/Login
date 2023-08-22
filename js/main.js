@@ -50,14 +50,7 @@ function getSignUpValues() {
       gotoLogin.href = "login.html";
     }
   }
-  if (register.length == 0) {
-    register.push(obj);
-    localStorage.setItem("register", JSON.stringify(register));
-    notValid.innerHTML = "success";
-    notValid.classList.replace("d-none", "d-block");
-    notValid.classList.replace("text-danger", "text-success");
-    gotoLogin.href = "login.html";
-  } else if (
+  if (
     userName.value == "" ||
     userEmail.value == "" ||
     userPassword.value == ""
@@ -85,7 +78,7 @@ function clear() {
 }
 // validation registration
 function validateUserName() {
-  let regex = /^[A-za-z]{1,}$/;
+  let regex = /^(?!.* .* )[a-zA-Z ]{2,25}$/;
   return regex.test(userName.value);
 }
 function validateUserEmail() {
@@ -119,7 +112,7 @@ function getSignInValues() {
     signInValidation.innerHTML = "All inputs are required";
     signInValidation.classList.replace("d-none", "d-block");
   } else if (checkFound() == true) {
-    gotoHome.href = "home.html";
+    gotoHome.href = "home.html?x=5";
     clear();
   } else {
     signInValidation.classList.replace("d-none", "d-block");
